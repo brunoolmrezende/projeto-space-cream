@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --ff-body: 'Palanquin', sans-serif;
+  --ff-heading: 'Staatliches', cursive;
+
+  --fc-title: #FFFFFF;
+  --fc-body: #23053A;
+
+  --fc-span: #4A4E69;
+
+  --bg-header: #8E9AAF;
+  --bg-body: #EFF1FF;
+  --bg-title: #CBC0D3;
+  --bg-span: #FEEAFA;
+}
+
+body {
+  font-family: var(--ff-body);
+  background: var(--bg-body);
+}
+
+header {
+  background: var(--bg-header);
+  padding-top:3.2rem;
+  padding-bottom: 3.2rem;
+
+  display: grid;
+  gap: 3.2rem;
+  place-items: center;
+}
+
+.logo, .logo img{
+  width: 21.4rem;
+  height: 16.7rem;
+}
+
+.bg-title {
+  background: var(--bg-title);
+
+  width: 100%;
+  text-align: center;
+
+  padding: 0.8rem 0;
+}
+
+header h1 {
+  font-family: var(--ff-heading);
+  font-weight: 400;
+  font-size: 4rem;
+  letter-spacing: 0.05em;
+  line-height: 3.4rem;
+
+  color: var(--fc-title);
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+main {
+  max-width: 32rem;
+  
+  padding: 2rem 3.2rem 6rem;
+  margin: 0 auto;
+
+  display: grid;
+  gap: 5.8rem;
+}
+
+main p {
+  font-size: 1.8rem;
+  line-height: 2.5rem;
+  color: var(--fc-body);
+
+  text-align: center;
+}
+
+.cards {
+  display: grid;
+  gap: 3.2rem;
+}
+
+.card {
+  position: relative;
+}
+
+.card span {
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+
+  background: var(--bg-span);
+  padding: 0 2.4rem;
+  border-radius: 20px;
+  width: fit-content;
+
+  text-transform: uppercase;
+  font-family: var(--ff-heading);
+  font-size: 2rem;
+  letter-spacing: 0.05em;
+  line-height: 3.4rem;
+
+  color: var(--fc-span);
+
+  animation: span 700ms backwards ease;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+
+  object-fit: cover;
+
+  transition: all 200ms;
+  transition-timing-function: ease;
+
+  animation: img 700ms backwards ease;
+}
+
+
+.card img:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+@keyframes img {
+  0% {
+    opacity: 0;
+    transform: translateY(+15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0)
+  }
+}
+
+@keyframes span {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px)
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0)
+  }
+}
